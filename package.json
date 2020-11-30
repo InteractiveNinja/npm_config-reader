@@ -6,6 +6,10 @@
     "scripts": {
         "test": "tsc -d && node app.js"
     },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/InteractiveNinja/npm_config-reader"
+    },
     "author": "interactiveninja",
     "license": "ISC",
     "devDependencies": {

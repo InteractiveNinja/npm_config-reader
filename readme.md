@@ -76,3 +76,7 @@ Console Output
 
 helloworld
 ```
+
+## Bugs and Feature Request
+
+Feel free to use Githubs Issue tool to suggest features or point out bugs
