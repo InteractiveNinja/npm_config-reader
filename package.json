@@ -1,0 +1,14 @@
+{
+    "name": "@interactiveninja/config-reader",
+    "version": "1.1.0",
+    "description": "ninjas config reader, unoptimized like ever",
+    "main": "built/index.js",
+    "scripts": {
+        "test": "tsc -d && node app.js"
+    },
+    "author": "interactiveninja",
+    "license": "ISC",
+    "devDependencies": {
+        "@types/node": "^14.14.10"
+    }
+}
