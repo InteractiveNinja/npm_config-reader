@@ -17,15 +17,15 @@ You can set and get Values out of the Config File
 
 Get an Instance of the Config Manager
 ```
-const config = require("@interactiveninja/config-reader")
-const conf = new config.config(path_from_config)
+const configManager = require("@interactiveninja/config-reader")
+const config = configManager(path_from_config)
 ```
 
 #### Example
 ```
 const path = require('path')
-const config = require("@interactiveninja/config-reader")
-const conf = new config.config(path.join(__dirname + "/config.json"))
+const configManager = require("@interactiveninja/config-reader")
+const config = configManager(path.join(__dirname + "/config.json")
 ```
 This will create a config file in the root directory
 
@@ -46,12 +46,12 @@ Please create your Config in this Simple Format:
 ### Read Values out of Config
 
 ```
-let value = conf.get(key_name)
+let value = config.get(key_name)
 console.log(value)
 ```
 #### Example
 ```
-let value = conf.get("key")
+let value = config.get("key")
 console.log(value)
 
 ------------------------------------------
@@ -63,11 +63,11 @@ helloworld
 ### Set/Update Value from Config
 
 ```
-conf.set(key_name,key_value)
+config.set(key_name,key_value)
 ```
 #### Example
 ```
-conf.set("users_message","helloworld")
+config.set("users_message","helloworld")
 let value = conf.get("users_message")
 console.log(value)
 

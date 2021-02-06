@@ -1,5 +1,12 @@
-import fs = require('fs')
-export class config {
+import { existsSync, readFileSync, writeFileSync } from "fs";
+
+/**
+ * creates a Config Manager
+ * @param path Path to Config File
+ */
+export let config = (path: string) : ConfigManager => {return new ConfigManager(path)}
+
+class ConfigManager {
     private path: string;
     private json: any;
     /**
@@ -17,7 +24,7 @@ export class config {
      */
     public get(key: string): any {
         let json: any = this.json;
-        return (json[0][key] != undefined) ? json[0][key] : "";
+        return (json[0][key] != undefined) ? json[0][key] : undefined;
     }
 
     /**
@@ -33,8 +40,8 @@ export class config {
      * Reads the Config File and returns JSON Array
      */
     private readFile(): [] {
-        if (!fs.existsSync(this.path) || fs.readFileSync(this.path, "utf-8") == "") fs.writeFileSync(this.path, JSON.stringify([{}]))
-        return JSON.parse(fs.readFileSync(this.path, "utf-8"))
+        if (!existsSync(this.path) || readFileSync(this.path, "utf-8") == "") writeFileSync(this.path, JSON.stringify([{}]))
+        return JSON.parse(readFileSync(this.path, "utf-8"))
     }
 
     /**
@@ -42,7 +49,7 @@ export class config {
      */
     private writeFile(): void {
         this.readFile()
-        fs.writeFileSync(this.path, JSON.stringify(this.json))
+        writeFileSync(this.path, JSON.stringify(this.json))
     }
 
 }
