@@ -3,7 +3,7 @@
  * @param path Path to Config File
  */
 export declare let config: (path: string) => ConfigManager;
-declare class ConfigManager {
+export declare class ConfigManager {
     private path;
     private json;
     /**
