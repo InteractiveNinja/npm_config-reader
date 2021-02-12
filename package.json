@@ -1,6 +1,6 @@
 {
     "name": "@interactiveninja/config-reader",
-    "version": "2.1.0",
+    "version": "2.1.1",
     "description": "ninjas config reader, unoptimized like ever",
     "main": "dist/index.js",
     "scripts": {
